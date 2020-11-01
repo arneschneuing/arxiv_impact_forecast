@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+
+    <!-- Include MathJax to render LaTex -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- External javascript -->
+    <!-- <script type="text/javascript" src='js/main.js'></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- External stylesheet -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <title>arXiv impact forecast</title>
+    <!-- <link rel="shortcut icon" href="icon_path.ico" /> -->
+  </head>
+  
+  <body>
+    <!-- navbar -->
+    <div class="pos-f-t fixed-top">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <!-- category selection -->
+          <div class="bg-dark p-4">
+            <h4 class="text-white">Select arXiv categories</h4>
+            <ul class="list-group" id="category_list"></ul>
+          </div>
+          <!-- number of papers per category -->
+          <div class="bg-dark p-4">
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="text-white mr-auto">Max. papers per category</h6>
+              <form class="range-field w-75">
+                <input type="range" class="form-control-range" id="maxPaperInput" min="1" max="10" step="1" value="1" onchange="getPapers(checkboxes);" oninput="updateSliderText(this.value);">
+              </form>
+              <span class="font-weight-bold ml-2 text-white" id="sliderText"></span>
+            </div>
+          </div>
+        </div>
+
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+    </div>
+  
+    <!-- Paper cards -->
+    <div class="paper">
+        <div class="container">
+          <h1 class="text-center">Recent Papers</h1>
+          <div id="paper_cards"></div>
+        </div>
+    </div>    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- <script src="bootstrap/js/bootstrap.min.js"></script> -->
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
+  </body>
+</html>

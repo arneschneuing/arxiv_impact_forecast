@@ -1,0 +1,74 @@
+/* 
+CSS Selectors 
+Selector            Example     Example description
+--------------------------------------------------------------------------------
+.class              .intro      Selects all elements with class="intro"
+#id                 #firstname	Selects the element with id="firstname"
+*	                *	        Selects all elements
+element	            p	        Selects all <p> elements
+element,element,..	div, p  	Selects all <div> elements and all <p> elements
+*/
+
+.btn{
+    width: 100%;
+}
+
+.list-group{
+    max-height: 400px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.dropdown-menu .list-group {
+    max-height: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.paper{
+    margin: 4em 0;
+    position: relative; 
+}
+
+.paper h1{
+    color:#F97300;
+    margin-top: 2em; 
+    margin-bottom: 1em;
+}
+
+.paper .card{
+    box-shadow: 0 0 20px #ccc;
+}
+
+.paper .card-header {
+    background-color: #F97300;
+    color: #ffffff;
+    width: 100%;
+}
+
+.paper .card-title{
+    color:#F97300;
+}
+
+.paper .card-body{
+    padding: 1em;
+}
+
+
+.fixed-top ::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.fixed-top ::-webkit-scrollbar-track {
+    background: #343a40;
+}
+
+.fixed-top ::-webkit-scrollbar-thumb {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.fixed-top ::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+    
